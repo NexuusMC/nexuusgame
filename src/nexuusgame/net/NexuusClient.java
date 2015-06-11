@@ -57,7 +57,7 @@ public class NexuusClient extends Thread {
 		case DISCONNECT:
 			packet = new Packet01Disconnect(data);
 			System.out.println("[" + address.getHostAddress() + ":" + port + "] " + ((Packet01Disconnect) packet).getUsername() + " has left the game.");
-			game.level.removePlayerMp(((Packet01Disconnect) packet).getUsername());
+			nexuus.level.removePlayerMp(((Packet01Disconnect) packet).getUsername());
 		case MOVE:
 			packet = new Packet02Move(data);
 			handleMove((Packet02Move) packet);
